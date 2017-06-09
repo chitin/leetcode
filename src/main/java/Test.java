@@ -8,9 +8,8 @@ import java.util.Map;
 public class Test {
     public static void main(String[] args) {
         System.out.println(Math.pow(0 ,2));
+        System.out.println("0".concat("1"));
 
-        String a = "lettt fsfsff dleelte";
-        System.out.println(a.split("\\s+")[0].toCharArray());
 
         Map map = new HashMap<>();
         map.put("11", "aa");
