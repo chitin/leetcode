@@ -1,0 +1,14 @@
+338. Counting Bits
+
+Given a non negative integer number num. For every numbers i in the range 0 ≤ i ≤ num calculate the number of 1's in their binary representation and return them as an array.
+
+Example:
+For num = 5 you should return [0,1,1,2,1,2].
+
+意思是给你一个非负整数num，对于0到num这(num+1)个整数，求出每个数用二进制表示时1的个数。
+
+对于11这个数，我们暂时用一个字节来表示
+11：           0000 1011
+11/2 = 5：0000 0101
+容易发现，除了11最右边那个位和5的最高位，其他位对应一样。也就是说i用二进制表示时1出现的次数等于i/2中1出现的次数加1（如果i用二进制表示时最右边一位为1，否则不加1）。
+这样我们在计算i时可以利用前面已计算出的i/2：ret[i] = ret[i/2] + (i % 2 == 0 ? 0 : 1);
